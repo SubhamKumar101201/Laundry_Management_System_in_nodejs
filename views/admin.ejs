@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: url('../images/bg2.jpg');
+}
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    /* padding: 120px 0; */
+    text-shadow: -15px 15px 8px rgb(0 0 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #333;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #f12020;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        /* content: "Scroll horizontally >"; */
+        /* display: block; */
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: transparent;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        /* background: #F8F8F8; */
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+/* nav */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.wrapper {
+  background: #171c24;
+  position: fixed;
+  width: 100%;
+}
+
+.wrapper nav {
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .content {
+  display: flex;
+  align-items: center;
+   
+}
+
+nav .content .links {
+  margin-left: 80px;
+  display: flex;
+}
+
+.content .logo a {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.rightlink a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content .links li {
+  list-style: none;
+  line-height: 70px;
+}
+
+.content .links li a,
+.content .links li label {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.content .links li label {
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+.Deliver-button{
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    height: 36px;
+    width: 90px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bolder;
+    margin-right: 8px;
+}
+.Deliver-button:hover{
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+    </style>
+	<title>LMS||AdminDashbord</title>	
+  </head>
+<body>
+
+    <div class="wrapper">
+        <nav>
+          <div class="content">
+            <div class="logo"><a href="/admin/loginsubmit">LMS</a></div>
+            <ul class="links">
+            </ul>
+          </div>
+          <div class="rightlink"><a href="/admin">Logout</a></div>
+        </nav>
+      </div>
+
+
+    <!--table section  -->
+	<div id="orderstatus" name="">
+		<h2>Order Track</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>S.no:</th>
+            <th>OID:</th>
+            <th>Date:</th>
+            <th>Total Amount:</th>
+            <th>Status:</th>
+            <th>Update Order:</th>
+        </tr>
+        </thead>
+        <tbody>
+          <%if (data != null) {%>
+            <%for(i =0;i<data.length;i++){%>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=data[i].id%></td>
+                    <td><%=data[i].orderdate%></td>
+                    <td><%=data[i].totalamount%></td>
+                    <td><%=data[i].status%></td>
+                    <td>
+                      <a href="/update/order/<%=data[i].id%>"><input type="submit" value="Update" class="Deliver-button"></a>
+                </tr>
+            <%}%>
+        <%}%>
+        <tbody>
+    </table>
+</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url('../images/bg1.jpg');
+}
+/* .main{
+    display: flex;
+    align-items: center;
+} */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #171c24;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .wrapper {
+    background: #171c24;
+    position: fixed;
+    display: flex;
+    /* position: sticky; */
+    width: 100vw;
+    top: 0;
+  }
+  
+  .wrapper nav {
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav .content {
+    display: flex;
+    align-items: center;
+     
+  }
+  
+  nav .content .links {
+    margin-left: 80px;
+    display: flex;
+  }
+  
+  .content .logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+  .rightlink a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .content .links li {
+    list-style: none;
+    line-height: 70px;
+  }
+  
+  .content .links li a,
+  .content .links li label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .content .links li label {
+    display: none;
+  }
+  
+  .content .links li a:hover,
+  .content .links li label:hover {
+    background: #323c4e;
+  }
+  
+  
+  .wrapper input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Dropdown Menu code start */
+  .content .links ul {
+    position: absolute;
+    background: #171c24;
+    top: 80px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .content .links li:hover>ul {
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+  }
+  
+  .content .links ul li a {
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    border-radius: 0px !important;
+  }
+  
+  .content .links ul ul {
+    position: absolute;
+    top: 0;
+    right: calc(-100% + 8px);
+  }
+  
+  .content .links ul li {
+    position: relative;
+  }
+  
+  .content .links ul li:hover ul {
+    top: 0;
+  }
+  
+
+
+
+.container{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #000;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    top: 25px;
+}
+.container header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #f12020;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #f12020;
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #000;
+    overflow:scroll;
+    /* overflow-x:unset;
+    overflow-y: scroll; */
+    
+}
+
+.container form .form{
+    position: absolute;
+    background-color: #000;
+    transition: 0.3s ease;
+}
+.container form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #f12020;
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #f12020;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #f12020;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+form button:hover{
+    background-color: #0000;
+    color: #f12020; 
+    border-color: #f12020;
+    border:solid;
+}
+form button i,
+form .backBtn i{
+    margin: 0 6px;
+}
+form .backBtn i{
+    transform: rotate(180deg);
+}
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
+
+@media (max-width: 750px) {
+    .container form{
+        overflow-x: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+}
+
+
+
+.Top_List {
+  display: none;
+}
+
+.Bottom_List{
+  display: none;
+}
+
+
+.Top_List .showtop {
+  display: block;
+}
+
+.Bottom_List .showbottom{
+  display: block;
+}
+ </style>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>LMS|Order</title> 
+</head>
+<body>
+        <div class="wrapper">
+            <nav>
+            <div class="content">
+                <div class="logo"><a href="/home/<%=id%>">LMS</a></div>
+                <ul class="links">
+                <li><a href="/home/<%=id%>">Home</a></li>
+                <li><a href="/order/<%=id%>">Loundry Request</a></li>
+                <li><a href="/orderstatus/<%=id%>">Track Status</a></li>
+                <li><a href="/about/<%=id%>">About</a></li>
+                </ul>
+            </div>
+            <div class="rightlink"><a href="http://localhost:8000">Logout</a></div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <header>Loundry Requests</header>
+
+            <form action="/ordersubmit/<%=id%>" method="post">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Personal Details</span>
+
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Enter your name" name='oname'required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Email ID</label>
+                                <input type="email"  placeholder="Enter your email" name='oemail' required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>State</label>
+                                <!-- <input type="text" placeholder="Enter State" name='State' required> -->
+                                <select value="State" name="ostate" required>
+                                    <option option disabled selected>Choose State:</option>
+                                    <option >Andhra Pradesh</option>
+                                    <option >Arunachal Pradesh</option>
+                                    <option >Assam</option>
+                                    <option >Bihar</option>
+                                    <option >Chhattisgarh</option>
+                                    <option >Goa</option>
+                                    <option >Gujarat</option>
+                                    <option >Haryana</option>
+                                    <option >Himachal Pradesh</option>
+                                    <option >Jharkhand</option>
+                                    <option >Karnataka</option>
+                                    <option >Kerala</option>
+                                    <option >Madhya Pradesh</option>
+                                    <option >Maharashtra</option>
+                                    <option >Manipur</option>
+                                    <option >Meghalaya</option>
+                                    <option >Mizoram</option>
+                                    <option >Nagaland</option>
+                                    <option >Odisha</option>
+                                    <option >Punjab</option>
+                                    <option >Rajasthan</option>
+                                    <option >Sikkim</option>
+                                    <option >Tamil Nadu</option>
+                                    <option >Telangana</option>
+                                    <option >Tripura</option>
+                                    <option >Uttar Pradesh</option>
+                                    <option >Uttarakhand</option>
+                                    <option >West Bengal</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field">
+                                <label>City</label>
+                                <input type="text" placeholder="Enter City" name='ocity' required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Pin Code</label>
+                                <input type="text" maxlength="6" placeholder="Enter Pin Code" name='opincode'required>
+
+                            </div>
+
+                            <div class="input-field">
+                                <label>Address</label>
+                                <input type="text" placeholder="Full Address" name='oaddress' required>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                        <!-- type of clothes -->
+                        <div class="details ID">
+                            <span class="title">Loundry Details</span>
+    
+    
+                            <div class="fields">
+
+                                <div class="input-field">
+                                    <label>Shirts</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="oshirt" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Pants</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="opant" >
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Jeans</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="ojean">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Shorts</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="oshort">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>T-Shirts</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="otshirt">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Sweatshirts</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="osweatshirt">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Bed Sheets</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="obedsheet">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Pillow Covers</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="opillow">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Towels</label>
+                                    <input type="Number" placeholder="Enter number of /pc" name="otowel">
+                                </div> 
+                        </div>
+
+                        <button class="submit">
+                            <span class="btnText">Order</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div> 
+                </div>
+
+    </div>
+            </form>
+        </div>
+    
+        
+    <!-- </div> -->
+</body>
+</html>
