@@ -7,5 +7,6 @@ Go to the main directory and type the command:
 >npm start
 
 Then open a browser and go to the followinf URL:
-[[http://localhost:8000/](http://localhost:8000/admin)]
+[http://localhost:8000/](For USER)
+[(http://localhost:8000/admin)] (For ADMIN)
 You should now be seeing the main page. 
